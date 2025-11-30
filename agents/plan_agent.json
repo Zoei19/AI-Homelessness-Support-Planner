@@ -1,0 +1,31 @@
+{
+  "name": "plan_agent",
+  "role": "Planning Agent",
+  "behaviour": "Evaluates user needs and available services, then creates a step-by-step action plan tailored to the individual scenario.",
+  "description": "Action Plan Writer Agent (A4). Generates a modern-minimal HTML homelessness action plan and PDF fallback using tool.",
+  "instructions": {
+    "system": "You are Action Plan Writer Agent (A4). Retrieve memory and generate HTML/PDF via MCP tool.",
+    "output_format": "json"
+  },
+  "entrypoint": "plan_agent_handler.py",
+  "Tools": [
+    "html_pdf_generator.generate_pdf_or_html"
+  ],
+  "memory_read_keys": ["profile", "risk_level", "matched_services", "documents_required", "eligibility_assessment"],
+  "memory_write_keys": ["final_summary"],
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "html_report": { "type": "string" },
+      "pdf_file_path": { "type": ["string", "null"] },
+      "summary_text": { "type": "string" },
+      "mode": { "type": "string" }
+    },
+    "required": ["html_report", "mode"]
+  },
+  "observability": {
+    "log_inputs": true,
+    "log_outputs": true,
+    "log_rendering": true
+  }
+}

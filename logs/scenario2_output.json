@@ -1,0 +1,11 @@
+{
+  "system_id": "single_system",
+  "session_id": "single_session",
+  "response": {
+    "raw_output": "",
+    "html_report": "logs\\Domestic_Abuse_Refuge_Case.html",
+    "pdf_file_path": null,
+    "summary_text": "Plan generated for Sofia",
+    "mode": "html-only"
+  }
+}

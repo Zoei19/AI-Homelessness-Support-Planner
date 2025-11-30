@@ -1,0 +1,17 @@
+{
+  "scenario_name": "Family with Children Facing Eviction",
+  "user_input": {
+    "name": "The Ahmed Family",
+    "age": "n/a",
+    "postcode": "M1 2WD",
+    "current_situation": "Landlord served Section 21 eviction notice",
+    "sleeping_location": "At risk of homelessness",
+    "has_children": true,
+    "is_pregnant": false,
+    "domestic_abuse_risk": false,
+    "health_conditions": "",
+    "immigration_status": "UK resident",
+    "financial_status": "working household",
+    "other_context": "seeking council help"
+  }
+}

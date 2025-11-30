@@ -1,0 +1,29 @@
+{
+  "name": "documentation_agent",
+  "role": "Documentation Agent",
+  "behaviour": "Collects and organizes relevant case information from user input and external sources, formats it into structured data for the pipeline.",
+  "description": "Documentation & Eligibility Agent (A3). Generates a personalised document checklist and evaluates statutory homelessness eligibility.",
+  "instructions": {
+    "system": "You are the Documentation & Eligibility Agent (A3). Apply the Homelessness Reduction Act 2017, priority-need rules, local connection rules, and right-to-reside requirements. Generate a personalised documentation checklist. Ask for missing info and PAUSE if needed. Output JSON only.",
+    "output_format": "json"
+  },
+  "tools": [],
+  "memory_read_keys": ["profile", "matched_services", "risk_level"],
+  "memory_write_keys": ["documents_required", "document_gaps", "eligibility_assessment"],
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "documents_required": { "type": "array", "items": { "type": "string" }},
+      "document_gaps": { "type": "array", "items": { "type": "string" }},
+      "eligibility_assessment": { "type": "string" },
+      "actions_needed_from_user": { "type": "array", "items": { "type": "string" }},
+      "pause": { "type": "boolean" }
+    },
+    "required": ["documents_required", "pause"]
+  },
+  "observability": {
+    "log_eligibility_reasoning": true,
+    "log_inputs": true,
+    "log_outputs": true
+  }
+}

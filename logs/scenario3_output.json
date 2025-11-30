@@ -1,0 +1,11 @@
+{
+  "system_id": "single_system",
+  "session_id": "single_session",
+  "response": {
+    "raw_output": "",
+    "html_report": "logs\\Family_with_Children_Facing_Eviction.html",
+    "pdf_file_path": null,
+    "summary_text": "Plan generated for The Ahmed Family",
+    "mode": "html-only"
+  }
+}

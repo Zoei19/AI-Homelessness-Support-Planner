@@ -1,0 +1,20 @@
+{
+  "scenario1": {
+    "A1_pass": true,
+    "A2_pass": true,
+    "A3_pass": true,
+    "A4_pass": true
+  },
+  "scenario2": {
+    "A1_pass": true,
+    "A2_pass": true,
+    "A3_pass": true,
+    "A4_pass": true
+  },
+  "scenario3": {
+    "A1_pass": true,
+    "A2_pass": true,
+    "A3_pass": true,
+    "A4_pass": true
+  }
+}

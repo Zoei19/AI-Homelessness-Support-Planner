@@ -1,0 +1,35 @@
+[
+  {
+    "scenario_file": "scenario1.json",
+    "name": "Daniel",
+    "age": "42",
+    "postcode": "SW1A 2AA",
+    "financial_status": "no income",
+    "health_conditions": "asthma",
+    "system_id": "single_system",
+    "session_id": "single_session",
+    "response_snippet": "logs\\High_Risk_Rough_Sleeping_in_London.html Plan generated for Daniel html-only"
+  },
+  {
+    "scenario_file": "scenario2.json",
+    "name": "Sofia",
+    "age": "29",
+    "postcode": "N17 6AA",
+    "financial_status": "low income",
+    "health_conditions": "",
+    "system_id": "single_system",
+    "session_id": "single_session",
+    "response_snippet": "logs\\Domestic_Abuse_Refuge_Case.html Plan generated for Sofia html-only"
+  },
+  {
+    "scenario_file": "scenario3.json",
+    "name": "The Ahmed Family",
+    "age": "n/a",
+    "postcode": "M1 2WD",
+    "financial_status": "working household",
+    "health_conditions": "",
+    "system_id": "single_system",
+    "session_id": "single_session",
+    "response_snippet": "logs\\Family_with_Children_Facing_Eviction.html Plan generated for The Ahmed Family html-only"
+  }
+]

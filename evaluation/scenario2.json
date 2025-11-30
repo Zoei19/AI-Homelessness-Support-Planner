@@ -1,0 +1,17 @@
+{
+  "scenario_name": "Domestic Abuse Refuge Case",
+  "user_input": {
+    "name": "Sofia",
+    "age": "29",
+    "postcode": "N17 6AA",
+    "current_situation": "Left partner due to abuse",
+    "sleeping_location": "Friend's sofa",
+    "has_children": false,
+    "is_pregnant": false,
+    "domestic_abuse_risk": true,
+    "health_conditions": "",
+    "immigration_status": "UK resident",
+    "financial_status": "low income",
+    "other_context": "needs emergency refuge"
+  }
+}

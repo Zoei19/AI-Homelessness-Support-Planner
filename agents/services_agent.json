@@ -1,0 +1,46 @@
+{
+  "name": "services_agent",
+  "role": "Services Matching Agent",
+  "behaviour": "Identifies and recommends relevant services and support options according to the user's situation and profile.",
+  "description": "Services Matching Agent (A2). Uses tools to locate appropriate UK homelessness services based on the user's risk profile.",
+  "instructions": {
+    "system": "You are the UK Services Matching Agent (A2). Use the user profile + risk data from memory to find the most appropriate UK homelessness services. ALWAYS use tools: uk_services_lookup.lookup_services, postcode_geo.postcode_to_geo, and google search. Rank services by urgency, distance, priority-need, and restrictions. Return structured JSON. No commentary.",
+    "output_format": "json"
+  },
+  "tools": [
+    "uk_services_lookup.lookup_services",
+    "postcode_geo.postcode_to_geo",
+    "google.search"
+  ],
+  "memory_read_keys": ["profile", "risk_level"],
+  "memory_write_keys": ["matched_services", "service_summary"],
+  "observability": {
+    "log_tool_calls": true,
+    "log_ranking": true,
+    "log_inputs": true,
+    "log_outputs": true
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "matched_services": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "type": { "type": "string" },
+            "distance_km": { "type": "string" },
+            "contact": { "type": "string" },
+            "address": { "type": "string" },
+            "opening_hours": { "type": "string" },
+            "eligibility_notes": { "type": "string" },
+            "why_recommended": { "type": "string" }
+          }
+        }
+      },
+      "service_summary_notes": { "type": "string" }
+    },
+    "required": ["matched_services"]
+  }
+}

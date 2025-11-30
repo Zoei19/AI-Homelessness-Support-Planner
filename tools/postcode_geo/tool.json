@@ -1,0 +1,19 @@
+{
+  "name": "postcode_geo",
+  "version": "1.0.0",
+  "description": "Convert UK postcodes to lat/lon using a simple local lookup or API.",
+  "type": "python",
+  "entrypoint": "handler.py",
+  "functions": {
+    "postcode_to_geo": {
+      "description": "Get latitude and longitude for a UK postcode.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "postcode": { "type": "string" }
+        },
+        "required": ["postcode"]
+      }
+    }
+  }
+}

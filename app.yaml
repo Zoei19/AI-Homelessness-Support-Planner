@@ -1,0 +1,31 @@
+memory:
+  session:
+    type: session
+  bank:
+    type: memory_bank
+    keys:
+      - profile
+      - risk_level
+      - priority_needs
+      - safeguarding
+      - missing_info_A1
+      - matched_services
+      - service_summary
+      - documents_required
+      - document_gaps
+      - eligibility_assessment
+      - final_summary
+
+context:
+  compaction:
+    enabled: true
+    strategy: summary
+    max_tokens: 2048
+
+observability:
+  logging:
+    enabled: true
+  tracing:
+    enabled: true
+  metrics:
+    enabled: true

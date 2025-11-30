@@ -1,0 +1,17 @@
+{
+  "scenario_name": "High Risk Rough Sleeping in London",
+  "user_input": {
+    "name": "Daniel",
+    "age": "42",
+    "postcode": "SW1A 2AA",
+    "current_situation": "Sleeping outside near Victoria Station",
+    "sleeping_location": "Rough sleeping",
+    "has_children": false,
+    "is_pregnant": false,
+    "domestic_abuse_risk": false,
+    "health_conditions": "asthma",
+    "immigration_status": "UK citizen",
+    "financial_status": "no income",
+    "other_context": "lost job recently"
+  }
+}

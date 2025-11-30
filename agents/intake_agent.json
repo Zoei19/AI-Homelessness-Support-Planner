@@ -1,0 +1,47 @@
+{
+  "name": "intake_agent",
+  "behavior": "Collects client information for initial assessment.",
+  "role": "intake",
+  "description": "UK Homelessness Intake & Risk Triage Agent (A1). Responsible for collecting user details, classifying risk level, and identifying priority need factors based on UK homelessness law.",
+  "instructions": {
+    "system": "You are the UK Homelessness Intake & Risk Triage Agent (A1). Your job is to collect essential details about the user's situation, identify UK-specific risk factors, and produce a structured JSON profile. DO NOT produce commentary. Output only JSON. Apply UK rules: priority need (children, pregnancy, DV, disability, health issues), local connection, safeguarding, homeless vs threatened with homelessness. Identify missing information fields.",
+    "output_format": "json"
+  },
+  "memory_read_keys": [],
+  "memory_write_keys": ["profile", "risk_level", "priority_needs", "safeguarding", "missing_info_A1"],
+  "observability": {
+    "log_decisions": true,
+    "log_inputs": true,
+    "log_outputs": true
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "risk_level": { "type": "string" },
+      "priority_need_factors": { "type": "array", "items": { "type": "string" }},
+      "homelessness_status": { "type": "string" },
+      "safeguarding_risks": { "type": "array", "items": { "type": "string" }},
+      "user_profile": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "age": { "type": "string" },
+          "postcode": { "type": "string" },
+          "current_situation": { "type": "string" },
+          "sleeping_location": { "type": "string" },
+          "has_children": { "type": "boolean" },
+          "is_pregnant": { "type": "boolean" },
+          "domestic_abuse_risk": { "type": "boolean" },
+          "health_conditions": { "type": "string" },
+          "immigration_status": { "type": "string" },
+          "financial_status": { "type": "string" },
+          "other_context": { "type": "string" }
+        }
+      },
+      "missing_information": { "type": "array", "items": { "type": "string" }}
+    },
+    "required": ["risk_level", "priority_need_factors", "user_profile"]
+  }
+}
+
+

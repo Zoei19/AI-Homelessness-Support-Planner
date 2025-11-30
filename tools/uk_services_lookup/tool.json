@@ -1,0 +1,21 @@
+{
+  "name": "uk_services_lookup",
+  "version": "1.0.0",
+  "description": "Lookup tool for UK homelessness services via CSV.",
+  "type": "python",
+  "entrypoint": "handler.py",
+  "functions": {
+    "lookup_services": {
+      "description": "Search homelessness services by region, postcode, or type.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  }
+}

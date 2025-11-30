@@ -1,0 +1,21 @@
+{
+  "name": "html_pdf_generator",
+  "version": "2.0.0",
+  "description": "Generate HTML report with optional PDF fallback.",
+  "type": "python",
+  "entrypoint": "handler.py",
+  "functions": {
+    "generate_pdf_or_html": {
+      "description": "Generate HTML and optionally PDF from HTML content.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "html": { "type": "string" },
+          "filename": { "type": "string" }
+        },
+        "required": ["html", "filename"]
+      }
+    }
+  }
+}
+
